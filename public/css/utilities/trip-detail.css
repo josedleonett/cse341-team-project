@@ -156,6 +156,96 @@ article.route-detail {
                         font-weight: 500;
                         color: var(--clr-primary);
                     }
+
+                    .station-name-row {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: var(--space-sm);
+                    }
+                }
+            }
+
+            .station-details-button {
+                padding: var(--space-xs) var(--space-sm);
+                border: 1px solid var(--clr-border);
+                border-radius: var(--radius-sm);
+                background-color: var(--clr-primary-pale);
+                color: var(--clr-primary);
+                font: inherit;
+                font-size: var(--font-size-sm);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: var(--clr-surface);
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--clr-primary);
+                    outline-offset: 2px;
+                }
+            }
+
+            .station-details-dialog {
+                width: calc(100% - 2rem);
+                max-width: 34rem;
+                padding: 0;
+                border: 1px solid var(--clr-border);
+                border-radius: var(--radius-lg);
+                background-color: var(--clr-surface);
+                color: var(--clr-text-primary);
+                box-shadow: var(--shadow-lg);
+
+                &::backdrop {
+                    background-color: rgb(0 0 0 / 55%);
+                }
+
+                .station-dialog-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--space-md);
+                    padding: var(--space-lg);
+                }
+
+                .station-dialog-close {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    button {
+                        padding: var(--space-xs) var(--space-sm);
+                        border: 1px solid var(--clr-border);
+                        border-radius: var(--radius-sm);
+                        background-color: var(--clr-surface);
+                        color: var(--clr-text-primary);
+                        cursor: pointer;
+                    }
+                }
+
+                #station-details-content {
+                    display: grid;
+                    gap: var(--space-md);
+                    margin: 0;
+
+                    > div {
+                        display: grid;
+                        gap: var(--space-xs);
+                    }
+
+                    dt {
+                        font-size: var(--font-size-xs);
+                        color: var(--clr-text-muted);
+                        text-transform: uppercase;
+                    }
+
+                    dd {
+                        margin: 0;
+                        color: var(--clr-text-secondary);
+                    }
+
+                    ul {
+                        margin: 0;
+                        padding-inline-start: var(--space-lg);
+                    }
                 }
             }
         }

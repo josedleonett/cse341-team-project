@@ -50,13 +50,52 @@
             <div class="stations">
                 <div class="station">
                     <span class="station-label">Start</span>
-                    <span class="station-name"><%= details.startStation.charAt(0).toUpperCase() + details.startStation.slice(1) %></span>
+                    <div class="station-name-row">
+                        <span class="station-name"><%= details.startStation.charAt(0).toUpperCase() + details.startStation.slice(1) %></span>
+                        <button type="button" class="station-details-button" data-station-id="<%= details.startStation %>" aria-haspopup="dialog" aria-controls="station-details-dialog">Station info</button>
+                    </div>
                 </div>
                 <div class="station">
                     <span class="station-label">End</span>
-                    <span class="station-name"><%= details.endStation.charAt(0).toUpperCase() + details.endStation.slice(1) %></span>
+                    <div class="station-name-row">
+                        <span class="station-name"><%= details.endStation.charAt(0).toUpperCase() + details.endStation.slice(1) %></span>
+                        <button type="button" class="station-details-button" data-station-id="<%= details.endStation %>" aria-haspopup="dialog" aria-controls="station-details-dialog">Station info</button>
+                    </div>
                 </div>
             </div>
+            <dialog id="station-details-dialog" class="station-details-dialog" aria-labelledby="station-details-title">
+                <div class="station-dialog-content">
+                    <form method="dialog" class="station-dialog-close">
+                        <button type="submit" aria-label="Close station details">Close</button>
+                    </form>
+                    <h2 id="station-details-title">Station details</h2>
+                    <p id="station-details-status" role="status" aria-live="polite"></p>
+                    <dl id="station-details-content" hidden>
+                        <div>
+                            <dt>Name</dt>
+                            <dd data-station-field="name"></dd>
+                        </div>
+                        <div>
+                            <dt>Prefecture</dt>
+                            <dd data-station-field="prefecture"></dd>
+                        </div>
+                        <div>
+                            <dt>Region</dt>
+                            <dd data-station-field="region"></dd>
+                        </div>
+                        <div>
+                            <dt>Description</dt>
+                            <dd data-station-field="description"></dd>
+                        </div>
+                        <div>
+                            <dt>Facilities</dt>
+                            <dd>
+                                <ul data-station-field="facilities"></ul>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </dialog>
         </div>
 
         <div class="route-operating">
@@ -99,4 +138,5 @@
     </div>
 </article>
 
+<script src="/js/station-details.js" defer></script>
 <%- include('../partials/footer') %>
