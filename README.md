@@ -74,6 +74,9 @@ Vitest starts the temporary database once for the complete test run. Before each
 
 See `tests/trains.test.js` for example endpoint tests that use Supertest to send requests to the real `/api/trains` route.
 
+The Trips API is documented in Swagger UI at `/api-docs/`. The generated
+OpenAPI document is available at `/api-docs.json`.
+
 This project simulates realistic work situations requiring reverse engineering, refactoring, debugging, or feature extension.
 
 ### For Contributors
@@ -91,7 +94,7 @@ Forking maintains the connection to the original repository and allows you to co
 - **Backend**: Node.js with Express framework
 - **Templating**: EJS
 - **Styling**: Modern nested CSS with custom properties
-- **Database**: MongoDB, using the official MongoDB Node.js driver
+- **Database**: MongoDB, using the official MongoDB Node.js driver and Mongoose
 - **Testing**: Vitest, Supertest, and MongoDB Memory Server
 
 ## Skills You'll Develop
